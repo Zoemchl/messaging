@@ -29,6 +29,6 @@ exports.getAllPost = (req,res,next) => {
     .then(posts => res.status(200).json(posts))
     .catch(error => res.status(400).json({error}));
 }
-exports.delete() = (req,res,next) => {
-
+exports.delete = (req,res,next) => {
+    
 }
