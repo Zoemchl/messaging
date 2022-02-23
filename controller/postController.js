@@ -22,6 +22,17 @@ exports.deletePost = (req,res,next) => {
     .catch(error => res.status(400).json({error}));
 }
 
+exports.createUpdateId = (req,res,next) => {
+    console.log('create put')
+    Post.updateOne({
+        title: req.body.title,
+        content: req.body.content,
+        author: req.body.author
+    })
+    .then(posts => res.status(200).json(posts))
+    .catch(error => res.status(400).json({error}))
+}
+
 exports.getPostId  = (req,res,next) => {
     console.log('get test id');
     Post.findOne({_id:req.params.id})
