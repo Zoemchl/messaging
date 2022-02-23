@@ -9,6 +9,6 @@ router.post('/', postController.createPost)
 router.get('/:id', postController.getPostId)
 router.get('/', postController.getAllPost)
 router.put('/:id', postController.createUpdateId)
-router.delete('/delete/:id', postController.delete)
+router.deletePost('/delete/:id', postController.delete)
 
 module.exports = router
