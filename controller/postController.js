@@ -15,6 +15,12 @@ exports.createPost = (req,res,next)=> {
     .catch(error => res.status(400).json({error}))
 }
 
+exports.deletePost = (req,res,next) => {
+    console.log('delete test id')
+    Post.deleteOne({_id:req.params.id})
+    .then(posts => res.status(200).json(posts))
+    .catch(error => res.status(400).json({error}));
+}
 
 exports.getPostId  = (req,res,next) => {
     console.log('get test id');
