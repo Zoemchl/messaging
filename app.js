@@ -23,6 +23,8 @@ app.use(express.urlencoded({ extended: true }))
 const postRoutes = require('./routes/postRoute')
 
 app.use('/test', postRoutes)
+app.use('/post', testRoutes)
+app.use('/delete', testRoutes)
 
 app.use((reg, res)=>{
     res.json({message:'ton serveur marche, cest cool'});
