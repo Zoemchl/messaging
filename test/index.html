@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <h1>Broccossenger</h1>
+        <img src="src/assets/images/logo_white_1.png" alt="Brocco's logo">
+      </nav>
+    </header>
+    <form>
+      <input v-model="titre" placeholder="titre">
+      <input v-model="text" placeholder="text">
+      <input v-model="author" placeholder="author">
+    </form>
+    <p>titre : {{ titre }} </p>
+    <p>text : {{ text }} </p>
+    <p>author : {{ author }} </p>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
