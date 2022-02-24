@@ -9,8 +9,15 @@ router.post('/', postController.createPost)
 router.get('/:id', postController.getPostId)
 router.get('/', postController.getAllPost)
 router.put('/:id', postController.createUpdateId)
+router.delete('/delete/:id', postController.deletePost)
 
-router.deletePost('/delete/:id', postController.delete)
 
 
-module.exports = router
+const router = express.Router();
+const userController = require("../controller/userController");
+
+router.post("/register", userController.registerNewUser);
+router.post("/login", userController.loginUser);
+router.get("/me", userController.getUserDetails);
+
+module.exports = router;
