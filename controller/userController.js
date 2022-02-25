@@ -2,7 +2,10 @@ const User = require("../models/User");
 
 exports.registerNewUser = async (req, res) => {};
 exports.loginUser = async (req, res) => {};
-exports.getUserDetails = async (req, res) => {};
+exports.getUserDetails = async (req, res) => {
+    await res.json(req.userData);
+  };
+  
 
 exports.registerNewUser = async (req, res) => {
     try {

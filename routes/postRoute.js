@@ -18,6 +18,6 @@ const userController = require("../controller/userController");
 
 router.post("/register", userController.registerNewUser);
 router.post("/login", userController.loginUser);
-router.get("/me", userController.getUserDetails);
-
+// router.get("/me", userController.getUserDetails);
+router.get("/me", auth,userController.getUserDetails);
 module.exports = router;
