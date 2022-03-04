@@ -1,12 +1,7 @@
-// import { createWebHistory, createRouter } from "vue-router"
-// import Home from "../views/HomeView.vue";
-// import Login from "../components/login.vue";
-// import Register from "../components/register.vue";
-
-import Vue from "vue";
-import VueRouter from "vue-router";
+import { createWebHistory, createRouter } from "vue-router";
+import Login from "../views/login.vue";
+import Register from "../views/register.vue";
 import Home from "../views/HomeView.vue";
-Vue.use(VueRouter);
 const routes = [
   {
     path: "/home",
@@ -19,19 +14,19 @@ const routes = [
   {
     path: "/",
     name: "login",
-    component: () => import("../views/login.vue")
+    component: Login,
   },
   {
     path: "/register",
     name: "register",
-    component: () => import("../views/register.vue")
+    component: Register,
   }
 ];
-const router = new VueRouter({
-  mode: "history",
-  base: process.env.BASE_URL,
-  routes
+const router = createRouter({
+  history: createWebHistory(),
+  routes,
 });
+
 router.beforeEach((to, from, next) => {
   if (to.matched.some(record => record.meta.requiresAuth)) {
     if (localStorage.getItem("jwt") == null) {
@@ -46,3 +41,4 @@ router.beforeEach((to, from, next) => {
   }
 });
 export default router;
+

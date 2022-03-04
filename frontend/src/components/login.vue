@@ -63,5 +63,6 @@ export default {
         console.log(err.response);
       }
     }
+  }
 };
 </script>

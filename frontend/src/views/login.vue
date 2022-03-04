@@ -4,7 +4,7 @@
   </div>
 </template>
 <script>
-import login from "@/components/auth/login";
+import login from "../components/login.vue";
 export default {
   components: {
     login
