@@ -1,1 +1,0 @@
-router.get("/me", auth,userController.getUserDetails);
