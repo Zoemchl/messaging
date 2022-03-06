@@ -21,9 +21,16 @@ exports.registerNewUser = async (req, res) => {
         password: req.body.password
       });
       let data = await user.save();
-      const token = await user.generateAuthToken(); // here it is calling the method that we created in the model
+      const token = await user.generateAuthToken();
       res.status(201).json({ data, token });
     } catch (err) {
       res.status(400).json({ err: err });
     }
   };
+
+exports.getAllUser = (req,res,next) => {
+    console.log('get all users')
+    User.find()
+    .then(users => res.status(200).json(users))
+    .catch(error => res.status(400).json({error}));
+}
